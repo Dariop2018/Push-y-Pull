@@ -8,3 +8,32 @@ struct nodo{
  
 typedef nodo *ptrPila;   // creando nodo tipo puntero( tipo de dato )
  
+/*                        Apilar elemento      
+------------------------------------------------------------------------*/
+void push( ptrPila &p, int valor )
+{
+     ptrPila aux;
+     aux = new(struct nodo);  // apuntamos al nuevo nodo creado
+     aux->nro = valor;
+     
+     aux->sgte = p ;
+     p = aux ;
+}
+ 
+/*                Desapilar elemento(devuelve elemento)      
+------------------------------------------------------------------------*/
+int pop( ptrPila &p )
+{
+     int num ;
+     ptrPila aux;
+     
+     aux = p ;
+     num = aux->nro;   // asignamos el primer vamor de la pila
+     
+     p = aux->sgte ;
+     delete(aux);
+     return num;
+}
+
+
+
