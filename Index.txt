@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+ 
+struct nodo{
+    int nro;
+    struct nodo *sgte;
+};
+ 
+typedef nodo *ptrPila;   // creando nodo tipo puntero( tipo de dato )
+ 
